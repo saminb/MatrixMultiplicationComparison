@@ -1,5 +1,5 @@
-import java.io.IOException;
-import java.io.PrintWriter;
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.DoubleSummaryStatistics;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
-	public static final String DATA_FILE = "output.csv";
 	public static List<Double> iterativeTimes= new ArrayList();
 	public static List<Double> DivideConquerTimes= new ArrayList();
 	public static List<Double> StrassenTimes= new ArrayList();
