@@ -1,3 +1,4 @@
+package model;
 
 public class IterativeMatrixMultiplication {
 
@@ -5,16 +6,16 @@ public class IterativeMatrixMultiplication {
     {
         int size = a.length;
         int[][] result = new int[size][size];
-        for (int resultRow = 0; resultRow < size; resultRow++)
+        for (int row = 0; row < size; row++)
         {
-            for (int resultCol = 0; resultCol < size; resultCol++)
+            for (int column = 0; column < size; column++)
             {
                 int sum = 0;
                 for (int i = 0; i < size; i++)
                 {
-                    sum += a[resultRow][i] * b[i][resultCol];
+                    sum += a[row][i] * b[i][column];
                 }
-                result[resultRow][resultCol] = sum;
+                result[row][column] = sum;
             }
         }
         return result;
