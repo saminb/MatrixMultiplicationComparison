@@ -2,21 +2,21 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.LongSummaryStatistics;
 import java.util.Random;
 
 public class Main {
-	public static List<Double> iterativeTimes= new ArrayList();
-	public static List<Double> DivideConquerTimes= new ArrayList();
-	public static List<Double> StrassenTimes= new ArrayList();
+	public static List<Long> iterativeTimes= new ArrayList();
+	public static List<Long> DivideConquerTimes= new ArrayList();
+	public static List<Long> StrassenTimes= new ArrayList();
 	
 	public static void main(String[] args){
 		runner();
 	}
 	
 	private static void runner() {
-		int [] n= {4,8,16,32,64,128,256,512,1024};
+		int [] n= {4,8,16,32,64,128,256,512};
 		
 		for( int i=0; i<n.length;i++){
 			int[][] matrixA= new int[n[i]][n[i]];
@@ -38,7 +38,7 @@ public class Main {
 			Date finishDate = new Date();
             finishTime = finishDate.getTime();
             totalTime = (finishTime - startTime);
-            iterativeTimes.add((double) totalTime);
+            iterativeTimes.add( totalTime);
 		}
 		System.out.println("Iterative");
 		averageTime(iterativeTimes);
@@ -50,7 +50,7 @@ public class Main {
 			Date finishDate2 = new Date();
          finishTime = finishDate2.getTime();
          totalTime = (finishTime - startTime);
-         DivideConquerTimes.add((double) totalTime);
+         DivideConquerTimes.add( totalTime);
 		}
 		System.out.println("Divide N Conquer");
 		averageTime(DivideConquerTimes);
@@ -61,15 +61,15 @@ public class Main {
 			Date finishDate3 = new Date();
          finishTime = finishDate3.getTime();
          totalTime = (finishTime - startTime);
-         StrassenTimes.add((double) totalTime);
+         StrassenTimes.add( totalTime);
 		}
 		System.out.println("Strassen");
 		averageTime(StrassenTimes);
 	}
 
-	private static void averageTime(List<Double> timeList) {
-		DoubleSummaryStatistics summaryStats = timeList.stream()
-			      .mapToDouble((a) -> a)
+	private static void averageTime(List<Long> timeList) {
+		LongSummaryStatistics summaryStats = timeList.stream()
+			      .mapToLong((a) -> a)
 			      .summaryStatistics();
 			      System.out.println(summaryStats.getAverage());
 		
