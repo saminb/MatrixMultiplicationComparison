@@ -1,7 +1,23 @@
 package model;
 
+/** This class implements Divide and Conquer algorithm for Matrix Multiplication
+ * @author samin
+ *
+ */
 public class DivideNConquerMatrixMultiplication {
 
+	/**
+	 * @param a
+	 * @param aRow
+	 * @param aColumn
+	 * @param b
+	 * @param bRow
+	 * @param bColumn
+	 * @param c
+	 * @param cRow
+	 * @param cColumn
+	 * @param size
+	 */
 	private static void divideConquer(int[][] a, int aRow, int aColumn,
             int[][] b, int bRow, int bColumn,
             int[][] c, int cRow, int cColumn, int size)
@@ -60,8 +76,13 @@ public class DivideNConquerMatrixMultiplication {
 		return;
 	}
 	
-	public static int[][] multiply(int[][] a, int[][] b) {
-		int size = a.length;
+	/**
+	 * @param a
+	 * @param b
+	 * @param size
+	 * @return result
+	 */
+	public static int[][] multiply(int[][] a, int[][] b, int size) {
 		int[][] result = new int[size][size];
 		divideConquer(	a,      0, 0,
 						b,      0, 0,

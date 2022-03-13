@@ -1,10 +1,21 @@
 package model;
 
+/**
+ * This class contains the Naive or Iterative Matrix Multiplication Algorithm.
+ * Once called it will multiple the two matrices together and returns the resulting matrix.
+ * @author samin
+ *
+ */
 public class IterativeMatrixMultiplication {
 
-	public static int[][] multiply(int[][] a, int[][] b)
+	/**
+	 * @param Matrix a
+	 * @param Matrix b
+	 * @param size of the matrices
+	 * @return result
+	 */
+	public static int[][] multiply(int[][] a, int[][] b, int size)
     {
-        int size = a.length;
         int[][] result = new int[size][size];
         for (int row = 0; row < size; row++)
         {

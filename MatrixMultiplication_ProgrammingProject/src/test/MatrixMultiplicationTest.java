@@ -146,49 +146,49 @@ public class MatrixMultiplicationTest {
 
     public static boolean iterativeMultiply2x2()
     {
-        int[][] abResult = IterativeMatrixMultiplication.multiply(a, b);
+        int[][] abResult = IterativeMatrixMultiplication.multiply(a, b,a.length);
         return matricesEqual(abResult, ab);
     }
 
     public static boolean iterativeMultiply4x4()
     {
-        int[][] cdResult = IterativeMatrixMultiplication.multiply(c, d);
+        int[][] cdResult = IterativeMatrixMultiplication.multiply(c, d,c.length);
         return matricesEqual(cdResult, cd);
     }
 
     public static boolean iterativeMultiply8x8()
     {
-        int[][] efResult = IterativeMatrixMultiplication.multiply(e, f);
+        int[][] efResult = IterativeMatrixMultiplication.multiply(e, f, e.length);
         return matricesEqual(efResult, ef);
     }
     
     public static boolean divideMultiply2x2() {
-    	 int[][] abResult = DivideNConquerMatrixMultiplication.multiply(a, b);
+    	 int[][] abResult = DivideNConquerMatrixMultiplication.multiply(a, b,a.length);
          return matricesEqual(abResult, ab);
     	
     }
     public static boolean divideMultiply4x4() {
-   	 int[][] cdResult = DivideNConquerMatrixMultiplication.multiply(c, d);
+   	 int[][] cdResult = DivideNConquerMatrixMultiplication.multiply(c, d,c.length);
         return matricesEqual(cdResult, cd);
    }
     public static boolean divideMultiply8x8() {
-   	 int[][] efResult = DivideNConquerMatrixMultiplication.multiply(e, f);
+   	 int[][] efResult = DivideNConquerMatrixMultiplication.multiply(e, f,e.length);
         return matricesEqual(efResult, ef);
    }
     public static boolean strassensMultiply2x2()    {
-        int[][] abResult = StrassenMatrixMultiplication.multiply(a, b);
+        int[][] abResult = StrassenMatrixMultiplication.forkJoinMultiply(a, b,a.length);
         return matricesEqual(abResult, ab);
     }
 
     public static boolean strassensMultiply4x4()
     {
-        int[][] cdResult = StrassenMatrixMultiplication.multiply(c, d);
+        int[][] cdResult = StrassenMatrixMultiplication.forkJoinMultiply(c, d,c.length);
         return matricesEqual(cdResult, cd);
     }
 
     public static boolean strassensMultiply8x8()
     {
-        int[][] efResult = StrassenMatrixMultiplication.multiply(e, f);
+        int[][] efResult = StrassenMatrixMultiplication.forkJoinMultiply(e, f,e.length);
         return matricesEqual(efResult, ef);
     }
 
